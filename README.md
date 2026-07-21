@@ -127,7 +127,7 @@ Run the application.
 
 # 📚 Learning Objectives
 
-This project demonstrates:
+This project demonstrates:-
 
 - Android Development
 - Kotlin Programming
