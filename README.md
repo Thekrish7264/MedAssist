@@ -173,12 +173,6 @@ If you like this project, don't forget to give it a ⭐ on GitHub.
 
 ---
 
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 <p align="center">
 
 Made with ❤️ by Krushna Mahajan
