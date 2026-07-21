@@ -10,7 +10,7 @@ Built with <strong>Kotlin</strong> and <strong>Jetpack Compose</strong> using mo
 ![Platform](https://img.shields.io/badge/Platform-Android-green?style=for-the-badge)
 ![Language](https://img.shields.io/badge/Language-Kotlin-blue?style=for-the-badge)
 ![UI](https://img.shields.io/badge/UI-Jetpack%20Compose-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-red?style=for-the-badge)
+
 
 </p>
 
