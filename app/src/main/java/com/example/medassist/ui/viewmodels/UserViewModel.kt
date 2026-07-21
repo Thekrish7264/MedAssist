@@ -1,0 +1,147 @@
+package com.example.medassist.ui.viewmodels
+
+import android.os.Build
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.medassist.data.model.User
+import com.example.medassist.data.repository.MedicineRepository
+import com.example.medassist.data.repository.ScheduleRepository
+import com.example.medassist.data.repository.UserRepository
+import com.example.medassist.notifications.MedicineNotificationManager
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
+
+@HiltViewModel
+class UserViewModel @Inject constructor(
+    val userRepository: UserRepository,
+    val medicineRepository: MedicineRepository,
+    val scheduleRepository: ScheduleRepository,
+    private val medicineNotificationManager: MedicineNotificationManager
+) : ViewModel() {
+
+    // debouncing to prevent rapid updates
+    private val _users = MutableStateFlow<List<User>>(emptyList())
+    val users: StateFlow<List<User>> = _users.asStateFlow()
+
+    private val _currentUser = MutableStateFlow<User?>(null)
+    val currentUser: StateFlow<User?> = _currentUser.asStateFlow()
+
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
+
+    init {
+        loadAllUsers()
+    }
+
+    private fun loadAllUsers() {
+        viewModelScope.launch {
+            _isLoading.value = true
+            try {
+                userRepository.getAllUsers()
+                    .distinctUntilChanged()
+                    .collect { userList ->
+                        _users.value = userList
+
+                        // Find current user
+                        val current = userList.firstOrNull { it.isCurrentUser }
+                        _currentUser.value = current
+
+                        _isLoading.value = false
+                    }
+            } catch (e: Exception) {
+                _isLoading.value = false
+
+                // Log error
+                android.util.Log.e("UserViewModel", "Error loading users", e)
+            }
+        }
+    }
+
+    fun setCurrentUser(user: User) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            try {
+                // coroutine scope to run in background
+                withContext(Dispatchers.IO) {
+                    // Clear current user flag from all users
+                    val allUsers = userRepository.getAllUsersList()
+                    allUsers.forEach { existingUser ->
+                        if (existingUser.isCurrentUser && existingUser.userId != user.userId) {
+                            userRepository.updateUser(existingUser.copy(isCurrentUser = false))
+                            // Cancel alarms for the previous current user
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                medicineNotificationManager.cancelAllAlarmsForUser(existingUser.userId)
+                            }
+                        }
+                    }
+
+                    // Set new current user
+                    val updatedUser = user.copy(isCurrentUser = true)
+                    userRepository.updateUser(updatedUser)
+
+                    // Update state on main thread
+                    withContext(Dispatchers.Main) {
+                        _currentUser.value = updatedUser
+                    }
+
+                    // Schedule alarms for the new current user
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        medicineNotificationManager.scheduleAlarmsForUser(updatedUser.userId)
+                    }
+                }
+                _isLoading.value = false
+            } catch (e: Exception) {
+                _isLoading.value = false
+                android.util.Log.e("UserViewModel", "Error setting current user", e)
+            }
+        }
+    }
+
+    fun addUser(user: User) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            try {
+                withContext(Dispatchers.IO) {
+                    userRepository.insertUser(user)
+
+                    // If this is the first user, automatically set as current
+                    val allUsers = userRepository.getAllUsersList()
+                    if (allUsers.isEmpty() || allUsers.none { it.isCurrentUser }) {
+                        setCurrentUser(user)
+                    }
+                }
+                _isLoading.value = false
+            } catch (e: Exception) {
+                _isLoading.value = false
+                android.util.Log.e("UserViewModel", "Error adding user", e)
+            }
+        }
+    }
+
+    fun updateUser(user: User) {
+        viewModelScope.launch {
+            userRepository.updateUser(user)
+            // Update current user state if this is the current user
+            if (user.isCurrentUser) {
+                _currentUser.value = user
+            }
+        }
+    }
+
+    fun deleteUser(user: User) {
+        viewModelScope.launch {
+            userRepository.deleteUser(user)
+            // If deleted the current user, select a new one
+            if (user.isCurrentUser && _users.value.isNotEmpty()) {
+                setCurrentUser(_users.value.first())
+            }
+        }
+    }
+}
