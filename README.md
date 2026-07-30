@@ -175,6 +175,6 @@ If you like this project, don't forget to give it a ⭐ on GitHub.
 
 <p align="center">
 
-Made with ❤️ by Krushna Mahajan
+Made with ❤️ by Krushna Mahajan.
 
 </p>
