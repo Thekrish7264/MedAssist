@@ -122,67 +122,89 @@ MedAssist
 
 # 🚀 Getting Started
 
-### Requirements
+Get MedAssist up and running on your local machine in just a few minutes.
 
-- Android Studio Hedgehog or newer
-- Android SDK 24+
-- Kotlin
-- Gradle
+## 📋 Prerequisites
 
-### Installation
+Before you begin, ensure you have the following installed:
+
+- ✅ Android Studio **Hedgehog** or later
+- ✅ Android SDK **API 24+**
+- ✅ Kotlin
+- ✅ Gradle (included with Android Studio)
+- ✅ Git
+
+## ⚡ Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/Thekrish7264/MedAssist.git
+
+# Navigate to the project directory
+cd MedAssist
 ```
 
-Open the project in Android Studio.
+### Run the Project
 
-Sync Gradle.
-
-Run the application.
-
----
-
-# 📱 Modules
-
-- Home
-- Medicine List
-- Add Medicine
-- Edit Medicine
-- Schedule
-- Notifications
-- Profile
-- Settings
-- Help & Support
+1. Open **Android Studio**
+2. Select **Open Project**
+3. Choose the **MedAssist** folder
+4. Wait for **Gradle Sync** to complete
+5. Connect an Android device or start an emulator
+6. Click **Run ▶️**
 
 ---
 
-# 🎯 Future Improvements
+# 📱 Application Modules
 
-- AI Medicine Assistant
-- Voice Reminder
-- Cloud Backup
-- Doctor Appointment Management
-- Family Medicine Sharing
-- Dark Theme Improvements
-- Health Analytics
-- Barcode Medicine Scanner
+| Module | Description |
+|:--------|:------------|
+| 🏠 Home | Dashboard with today's medications and quick overview |
+| 💊 Medicine Manager | View, search, and organize medicines |
+| ➕ Add Medicine | Add new medicines with dosage and schedule |
+| ✏️ Edit Medicine | Update medicine details anytime |
+| ⏰ Reminder Scheduler | Configure medication reminders |
+| 🔔 Notifications | Receive timely reminder alerts |
+| 👤 Profile | Manage user information |
+| ⚙️ Settings | Customize app preferences |
+| ❓ Help & Support | User guidance and assistance |
 
 ---
 
-# 📚 Learning Objectives
+# 🎯 Roadmap
 
-This project demonstrates:-
+Planned features for upcoming releases:
 
-- Android Development
-- Kotlin Programming
-- Jetpack Compose
-- Material Design
-- Room Database
-- State Management
-- Navigation
-- Background Services
-- Notifications
+- 🤖 AI Medicine Assistant
+- 🎙️ Voice Reminder Support
+- ☁️ Cloud Backup & Sync
+- 👨‍⚕️ Doctor Appointment Management
+- 👨‍👩‍👧 Family Medicine Sharing
+- 🌙 Enhanced Dark Mode
+- 📊 Health Analytics Dashboard
+- 📷 Barcode Medicine Scanner
+- 💉 Prescription Image Scanner
+- 🌐 Multi-language Support
+
+---
+
+# 📚 Learning Outcomes
+
+This project demonstrates practical experience with:
+
+- 📱 Modern Android Development
+- 💜 Kotlin Programming
+- 🎨 Jetpack Compose UI
+- 🧩 Material 3 Design System
+- 🏛️ MVVM Architecture
+- 🗄️ Room Database
+- 💾 DataStore Preferences
+- 🔄 State Management
+- 🧭 Navigation Component
+- ⚙️ WorkManager
+- 🔔 Notification System
+- 📦 Gradle Kotlin DSL
+- 🧼 Clean Code Principles
 
 ---
 
