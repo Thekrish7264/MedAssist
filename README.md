@@ -210,33 +210,48 @@ This project demonstrates practical experience with:
 
 # 👨‍💻 Developer
 
-**Krushna Mahajan**
+<div align="center">
 
-Computer Engineering Student
+## Krushna Mahajan
 
-Android Developer
+**Computer Engineering Student • Android Developer • Kotlin Enthusiast**
 
-GitHub
+Passionate about building modern Android applications using **Kotlin**, **Jetpack Compose**, and **MVVM Architecture** while continuously exploring the latest Android technologies and best development practices.
 
-https://github.com/Thekrish7264
+<p>
 
-Email
+<a href="https://github.com/Thekrish7264">
+<img src="https://img.shields.io/badge/GitHub-Thekrish7264-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
 
-krishnamahajan9637@gmail.com
+<a href="mailto:krishnamahajan9637@gmail.com">
+<img src="https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+</p>
+
+</div>
 
 ---
 
-# 🤝 Contributions
+# 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome.
+Contributions are always welcome!
 
-If you'd like to improve this project, feel free to fork the repository and create a pull request.
+If you'd like to improve **MedAssist**, you can:
+
+- 🍴 Fork the repository
+- 🌿 Create a new feature branch
+- 💻 Commit your changes
+- 🚀 Submit a Pull Request
+
+Every contribution, no matter how small, is greatly appreciated.
 
 ---
 
 # ⭐ Support
 
-If you like this project, don't forget to give it a ⭐ on GitHub.
+If you found this project helpful, please consider giving it a **⭐ Star** on GitHub. It helps the project reach more developers and motivates future improvements.
 
 ---
 
