@@ -1,26 +1,52 @@
-<h1 align="center">💊 MedAssist</h1>
-
-<p align="center">
-A modern Android application for medication reminders, prescription management, and health tracking.
-Built with <strong>Kotlin</strong> and <strong>Jetpack Compose</strong> using modern Android development practices.
-</p>
-
 <p align="center">
 
-![Platform](https://img.shields.io/badge/Platform-Android-green?style=for-the-badge)
-![Language](https://img.shields.io/badge/Language-Kotlin-blue?style=for-the-badge)
-![UI](https://img.shields.io/badge/UI-Jetpack%20Compose-orange?style=for-the-badge)
-
+<img src="https://img.shields.io/github/stars/Thekrish7264/MedAssist?style=for-the-badge"/>
+<img src="https://img.shields.io/github/license/Thekrish7264/MedAssist?style=for-the-badge"/>
+<img src="https://img.shields.io/github/last-commit/Thekrish7264/MedAssist?style=for-the-badge"/>
 
 </p>
+
+<div align="center">
+
+# 💊 MedAssist
+
+### Smart Medication Management for Modern Healthcare
+
+*A beautiful Android application that helps users manage medicines, receive timely reminders, organize prescriptions, and track daily health routines.*
+
+<br>
+
+![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Language](https://img.shields.io/badge/Language-Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![UI](https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)
+![Architecture](https://img.shields.io/badge/Architecture-MVVM-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+
+</div>
+
+---
+
+## ✨ Why MedAssist?
+
+Managing medications shouldn't be complicated.
+
+**MedAssist** is a modern Android application built to simplify medicine management through an intuitive and user-friendly experience. It helps users stay consistent with their medications by providing smart reminders, organized prescription management, and daily health tracking—all in one place.
+
+Designed using **Kotlin** and **Jetpack Compose**, the application follows modern Android development practices to deliver a fast, clean, and responsive user experience.
 
 ---
 
 # 📖 About
 
-MedAssist is a smart medication management application that helps users organize medicines, schedule reminders, and maintain daily medication routines.
+MedAssist is a smart medication management application that enables users to:
 
-The application is designed with a clean and user-friendly interface to make medicine management simple and efficient for everyone.
+- 💊 Organize medicines efficiently
+- ⏰ Schedule medication reminders
+- 📄 Manage digital prescriptions
+- 📊 Track daily medication history
+- ❤️ Build healthier daily routines
+
+The application focuses on simplicity, accessibility, and reliability, making medication management effortless for users of all ages.
 
 ---
 
