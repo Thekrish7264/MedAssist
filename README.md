@@ -65,18 +65,37 @@ The application focuses on simplicity, accessibility, and reliability, making me
 
 ---
 
+<p align="center">
+
+<img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"/>
+<img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white"/>
+<img src="https://img.shields.io/badge/Material%203-6200EE?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/MVVM-FF9800?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Room-3DDC84?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/DataStore-2196F3?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/WorkManager-009688?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white"/>
+<img src="https://img.shields.io/badge/Gradle-Kotlin%20DSL-02303A?style=for-the-badge&logo=gradle&logoColor=white"/>
+
+</p>
+
 # 🛠 Tech Stack
 
-| Technology | Used |
-|------------|------|
-| Kotlin | ✅ |
-| Jetpack Compose | ✅ |
-| Material 3 | ✅ |
-| Android Studio | ✅ |
-| Gradle Kotlin DSL | ✅ |
-| Room Database | ✅ |
-| DataStore | ✅ |
-| WorkManager | ✅ |
+<div align="center">
+
+| Category | Technology |
+|:---------|:-----------|
+| 💻 **Language** | Kotlin |
+| 🎨 **UI Toolkit** | Jetpack Compose |
+| 🧩 **Design System** | Material 3 |
+| 🏗️ **Architecture** | MVVM |
+| 🗄️ **Database** | Room Database |
+| 💾 **Local Storage** | DataStore |
+| ⏰ **Background Tasks** | WorkManager |
+| 🛠️ **IDE** | Android Studio |
+| 📦 **Build System** | Gradle Kotlin DSL |
+
+</div>
 
 ---
 
